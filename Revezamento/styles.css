@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 10px; /* Para evitar que o conteúdo fique colado nas bordas da tela */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Garante que o container fique centralizado mesmo em telas maiores */
+}
+
+/* Gradiente aplicado ao header */
+header {
+    padding: 20px;
+    background: linear-gradient(to right, #542e91, #aa78ff);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+h2 {
+    margin-left: 10px; /* Ajuste de margem para uma boa visualização em telas pequenas */
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px; /* Reduzindo o espaçamento para telas menores */
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ajustado para se adaptar a diferentes tamanhos de tela */
+    text-align: center;
+}
+
+.hour {
+    display: flex;
+    align-items: start;
+    position: relative;
+}
+
+.hour p {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.time-line {
+    flex-grow: 1;
+    height: 50px;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.time-line:hover {
+    border-color: #aa78ff;
+    background-color: rgba(170, 120, 255, 0.3);
+    box-shadow: 0 0 5px rgba(84, 46, 128, 0.5);
+}
+
+/* Estilização do botão com cores e gradiente */
+.date .add {
+    background: #542e91;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+.date .add:hover {
+    background: #8761db;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+    
+    .row {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    .time {
+        width: 100%; 
+    }
+
+    .date h3 {
+        font-size: 16px;
+    }
+
+    .date .add {
+        padding: 8px 16px;
+        font-size: 12px; /* Ajuste no tamanho do botão para telas menores */
+    }
+}
+
+/* ADICIONANDO */
+
+/* Estilos para a página de "Novo Revezamento" */
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.horario {
+    display: flex;
+    justify-content: space-between;
+}
+
+.horario .input-group {
+    width: 48%;
+}
+
+/* Estilo das opções de cores em formato de bolinhas */
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Exibe 10 bolinhas por linha */
+    gap: 10px; /* Espaço reduzido entre as bolinhas */
+    justify-items: center;
+    margin: 10px 0;
+}
+
+.color-circle {
+    width: 20px; /* Tamanho reduzido das bolinhas */
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent; /* Borda transparente por padrão */
+    transition: border-color 0.3s ease;
+}
+
+/* Definindo cores para cada bolinha */
+.color-circle.red {
+    background-color: red;
+}
+
+.color-circle.blue-light {
+    background-color: #6A7BD9; /* Tom azul claro */
+}
+
+.color-circle.yellow {
+    background-color: #E7C74D; /* Amarelo */
+}
+
+.color-circle.green-dark {
+    background-color: #006F2D; /* Verde escuro */
+}
+
+.color-circle.purple {
+    background-color: #9253C4; /* Roxo */
+}
+
+.color-circle.peach {
+    background-color: #E28D6B; /* Pêssego */
+}
+
+.color-circle.green-light {
+    background-color: #92F3C6; /* Verde claro */
+}
+
+.color-circle.cyan {
+    background-color: #5DD9E1; /* Ciano */
+}
+
+.color-circle.neon-green {
+    background-color: #8FFF3F; /* Verde neon */
+}
+
+.color-circle.pink-light {
+    background-color: #F49BC1; /* Rosa claro */
+}
+
+/* Quando o input (correspondente ao label) estiver selecionado */
+input[type="radio"]:checked + label {
+    border-color: black; /* Cor roxa da paleta para indicar seleção */
+}
+
+/* Hover com efeito de destaque na borda */
+.color-circle:hover {
+    border-color: #ccc;
+}
+
+/* Responsividade para bolinhas de cores */
+@media (max-width: 600px) {
+    .color-options {
+        grid-template-columns: repeat(5, 1fr); /* Exibe 5 bolinhas por linha em telas menores */
+        gap: 8px;
+    }
+
+    .color-circle {
+        width: 18px; /* Tamanho menor para telas pequenas */
+        height: 18px;
+    }
+}
+
+/* Estilo do botão "Salvar" para combinar com o roxo */
+.save-button {
+    background: #542e91;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.save-button:hover {
+    background: #8761db;
+}
+
+/* Responsividade para o formulário */
+@media (max-width: 600px) {
+    .horario {
+        flex-direction: column;
+    }
+
+    .horario .input-group {
+        width: 100%;
+    }
+
+    .save-button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .color-options {
+        justify-content: space-around;
+    }
+}
